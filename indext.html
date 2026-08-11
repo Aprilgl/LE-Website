@@ -3,3 +3,334 @@
     <h1>นี่คือเว็ปไซต์ของร้าน Lanna Eats เดี๋ยวจะนั่งทำต่อให้เสร็จแล้วส่งอาจารย์</h1>  
   </bady>
 </html>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lanna Eats - ข้าวซอยสูตรดั้งเดิมสไตล์มินิมอล เชียงใหม่</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #FAF8F5;
+            --card-bg: #FFFFFF;
+            --primary: #C86D51; /* สีส้มอิฐ ลุค Minimal */
+            --text-dark: #2B2927;
+            --text-muted: #7C7874;
+            --accent: #E8D3C5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* Header & Hero */
+        header {
+            background: var(--bg-color);
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: var(--primary);
+        }
+
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 300;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        /* Menu Section */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .menu-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .menu-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .menu-info {
+            padding: 20px;
+        }
+
+        .menu-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        .menu-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            height: 40px;
+        }
+
+        .menu-price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Info Section */
+        .info-section {
+            background: #F2EDE4;
+            margin-top: 60px;
+            padding: 60px 20px;
+            border-radius: 24px;
+            text-align: center;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .info-item h3 {
+            font-size: 1rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .info-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.1rem; }
+            header { padding: 15px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">LANNA EATS</div>
+        <nav>
+            <a href="#menu">เมนู</a>
+            <a href="#about">เกี่ยวกับเรา</a>
+            <a href="#contact">ติดต่อ</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <span class="tag">Chiang Mai Original</span>
+        <h1>ข้าวซอยสูตรดั้งเดิม<br>ในบรรยากาศร่วมสมัย</h1>
+        <p>สัมผัสรสชาติเข้มข้นของน้ำแกงข้าวซอยเชียงใหม่แท้ๆ เสิร์ฟในสไตล์ Minimalist เอาใจคนรุ่นใหม่</p>
+    </section>
+
+    <main class="container" id="menu">
+        <h2 class="section-title">RECOMMENDED MENU</h2>
+        
+        <div class="menu-grid">
+            <!-- เมนูที่ 1 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=600&q=80" alt="ข้าวซอยไก่" class="menu-img">
+                <div class="menu-info">
+                    <div class="menu-title">ข้าวซอยไก่สูตรดั้งเดิม</div>
+                    <div class="menu-desc">น่องไก่ชิ้นโตนุ่มละมุน เคี่ยวในน้ำแกงเข้มข้นหอมกลิ่นเครื่องเทศ</div>
+                    <div class="menu-price"><span>฿89</span></div>
+                </div>
+            </div>
+
+            <!-- เมนูที่ 2 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1541832676-9b763b0239ab?auto=format&fit=crop&w=600&q=80" alt="ข้าวซอยเนื้อน่องลาย" class="menu-img">
+                <div class="menu-info">
+                    <div class="menu-title">ข้าวซอยเนื้อน่องลายตุ๋น</div>
+                    <div class="menu-desc">เนื้อน่องลายแทรกมัน เคี่ยวตุ๋นยาวนานกว่า 6 ชั่วโมง ละลายในปาก</div>
+                    <div class="menu-price"><span>฿119</span></div>
+                </div>
+            </div>
+
+            <!-- เมนูที่ 3 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="ข้าวซอยหมูกรอบ" class="menu-img">
+                <div class="menu-info">
+                    <div class="menu-title">ข้าวซอยหมูกรอบ</div>
+                    <div class="menu-desc">หมูกรอบชาชูหนังกรอบฟู ตัดกับความเข้มข้นของน้ำแกงข้าวซอย</div>
+                    <div class="menu-price"><span>฿109</span></div>
+                </div>
+            </div>
+
+            <!-- เมนูที่ 4 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" alt="ข้าวซอยเต้าหู้เห็ดหอม" class="menu-img">
+                <div class="menu-info">
+                    <div class="menu-title">ข้าวซอยเต้าหู้เห็ดหอม (มังสวิรัติ)</div>
+                    <div class="menu-desc">สูตรพิเศษสำหรับคนรักสุขภาพ น้ำซุปเข้มข้นจากผักและเห็ดหอมสด</div>
+                    <div class="menu-price"><span>฿79</span></div>
+                </div>
+            </div>
+
+            <!-- เมนูที่ 5 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=600&q=80" alt="ข้าวซอยแห้งกุ้งแม่น้ำ" class="menu-img">
+                <div class="menu-info">
+                    <div class="menu-title">ข้าวซอยแห้งกุ้งแม่น้ำเผา</div>
+                    <div class="menu-desc">ข้าวซอยผัดแห้งซอสเข้มข้น เสิร์ฟพร้อมกุ้งแม่น้ำเผาตัวโต</div>
+                    <div class="menu-price"><span>฿159</span></div>
+                </div>
+            </div>
+
+            <!-- เมนูที่ 6 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=600&q=80" alt="ขนมจีนน้ำเงี้ยว" class="menu-img">
+                <div class="menu-info">
+                    <div class="menu-title">ขนมจีนน้ำเงี้ยวทรงเครื่อง</div>
+                    <div class="menu-desc">น้ำเงี้ยวสูตรเมืองเชียงใหม่แท้ เครื่องแน่น หอมดอกงิ้วและกระดูกหมู</div>
+                    <div class="menu-price"><span>฿79</span></div>
+                </div>
+            </div>
+
+            <!-- เมนูที่ 7 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80" alt="ไอศกรีมกะทิสดอบควันเทียน" class="menu-img">
+                <div class="menu-info">
+                    <div class="menu-title">ไอศกรีมกะทิสดอบควันเทียน</div>
+                    <div class="menu-desc">ของหวานล้างปาก ไอศกรีมหอมหวานน้อย ท็อปด้วยข้าวซอยกรอบ</div>
+                    <div class="menu-price"><span>฿49</span></div>
+                </div>
+            </div>
+
+            <!-- เมนูที่ 8 -->
+            <div class="menu-card">
+                <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=600&q=80" alt="น้ำลำไยสด" class="menu-img">
+                <div class="menu-info">
+                    <div class="menu-title">น้ำลำไยสดเนื้อแน่น</div>
+                    <div class="menu-desc">หวานหอมกำลังดี เสิร์ฟพร้อมเนื้อลำไยสดหวานฉ่ำเต็มแก้ว</div>
+                    <div class="menu-price"><span>฿39</span></div>
+                </div>
+            </div>
+        </div>
+
+        <section class="info-section" id="contact">
+            <h2>VISIT US</h2>
+            <p style="color: var(--text-muted); margin-top: 5px;">แวะมาสัมผัสความอร่อยได้ทุกวัน</p>
+            
+            <div class="info-grid">
+                <div class="info-item">
+                    <h3>LOCATION</h3>
+                    <p>ถนนนิมมานหมินทร์ ซอย 7<br>อ.เมือง จ.เชียงใหม่</p>
+                </div>
+                <div class="info-item">
+                    <h3>HOURS</h3>
+                    <p>เปิดบริการทุกวัน<br>10:00 น. - 20:00 น.</p>
+                </div>
+                <div class="info-item">
+                    <h3>INSTAGRAM</h3>
+                    <p>@lannaeats.cnx</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Lanna Eats Chiang Mai. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
